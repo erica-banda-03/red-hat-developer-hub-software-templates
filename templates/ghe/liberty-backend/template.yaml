@@ -83,12 +83,16 @@ spec:
           description: Name for the Java Package (e.g. io.openliberty.sample.system) should match Group ID and Artifact ID
     - title: Provide information about the CI method
       required:
+        - ci
         - imageRepository
         - namespace
         - imageUrl
       properties:
         ci:
-          const: ../../../skeletons/tekton/
+          title: Select a CI method
+          type: string
+          description: This action will create a CI pipeline for your application based on chosen method
+          default: ../../../skeletons/tekton/
         imageRepository:
           title: Select a registry
           type: string
